@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   return <div className='app'>
-    <Animal/>
+    <Animal icone='🦁' nome='Leão' peso={190} extincao/>
   </div>;
 }
 
