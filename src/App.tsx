@@ -10,35 +10,25 @@ const ANIMAIS: AnimaisTuplaType[] = [
   ['🦒',' Girafa', 1200, true],
   ['🦓','Zebra', 120, true],
   ['🦜', 'Papagaio', 0.12, false],
+  ['🐉', 'Dragão', 100000, true],
 ]
 
 function App() {
   const exA1: ReactNode[] = [];
   const exB2: ReactNode[] = [];
   for (let i = 0; i < ANIMAIS.length; i++) {
-    if (ANIMAIS[i][2] < 200.0)
-    {
-      exA1.push(
-        <Animal 
-          key = {ANIMAIS[i][1]}
-          icone ={ANIMAIS[i][0]} 
-          nome={ANIMAIS[i][1]} 
-          peso={ANIMAIS[i][2]} 
-          extincao={ANIMAIS[i][3]}
-        />
-        );
-    }
-    else {
-      exB2.push(
-        <Animal 
-          key = {ANIMAIS[i][1]}
-          icone ={ANIMAIS[i][0]} 
-          nome={ANIMAIS[i][1]} 
-          peso={ANIMAIS[i][2]} 
-          extincao={ANIMAIS[i][3]}
-        />
-        );
-    }
+    
+    let ex = (ANIMAIS[i][2] < 200.0) ? exA1 : exB2;
+
+    ex.push(
+      <Animal 
+        key = {ANIMAIS[i][1]}
+        icone ={ANIMAIS[i][0]} 
+        nome={ANIMAIS[i][1]} 
+        peso={ANIMAIS[i][2]} 
+        extincao={ANIMAIS[i][3]}
+      />
+      );
   }
 
   return <div className='app'>
